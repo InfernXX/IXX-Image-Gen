@@ -1,0 +1,11 @@
+Width:1920
+Height:1080
+Organic Pixel Cycle:1000000
+Organic Red Balance:255
+Organic Green Balance:255
+Organic Blue Balance:255
+Organic Have Custom Balance For First Cycle?(You MUST Capitalize the "True" or "False"):True
+Seeded and Unseeded Default File Extention(You MUST Include the "." at the beginning):.bmp
+Seeded Seed Generation Type:Time
+#!!!Not In Use!!!#Place in Custom Directory(Folder) and not use Internal Directory(Folder)?(You MUST Capitalize the "True" or "False"):False
+#!!!Not In Use!!!#ustom Directory::C://User//Photos
