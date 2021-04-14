@@ -57,3 +57,4 @@ def Overarching_Generate(Config_File="Config.IXXC", CutomDir="Generated Images")
 
     print(f"Done! Took {time.time() - t} seconds and is saved under the file name: {Image_Name}.")
     print(time.strftime("Finishing time: %X on %d,%m,%Y",time.localtime()))
+    return Image_Name
