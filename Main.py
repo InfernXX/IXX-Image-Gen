@@ -24,6 +24,7 @@ def Seeded_Gen():
             Seeded_Gen()
         else:
             print("Saved as:",os.path.join(os.path.join(os.getcwd(),"Generated Images"),Image_Name))
+            return os.path.join(os.path.join(os.getcwd(),"Generated Images"),Image_Name)
     except Exception as The_Problem:
         File = open("Error Log.IXXLF", "a")
         Write_Var = "\n"+time.strftime(" @ %X on %d/%m/%Y; an Exception was caught: ",time.localtime())+str(The_Problem)
@@ -47,6 +48,7 @@ def UnSeeded_Gen():
             UnSeeded_Gen()
         else:
             print("Saved as:",os.path.join(os.path.join(os.getcwd(),"Generated Images"),Image_Name))
+            return os.path.join(os.path.join(os.getcwd(),"Generated Images"),Image_Name)
     except Exception as The_Problem:
         File = open("Error Log.IXXLF", "a")
         Write_Var = "\n"+time.strftime(" @ %X on %d/%m/%Y; an Exception was caught: ",time.localtime())+str(The_Problem)
@@ -74,18 +76,21 @@ def Main():
         ICon = open("Integrity Config.IXXC", "w")
         ICon.write(".")
         ICon.close()
-        Sc.Hex_SelectSC("UnSeeded", "Seeded", "Organic-Like/Looking", "Open Config", "Open Selected Image Folder", "Quit Program", "uS", "S", "Ol", "OC", "OD", "E", False, "300x100", True, "Image Generator", "Config", ".IXXC", True, True, "IXX Image Gen Icon.ico")
+        Sc.Hex_SelectSC("UnSeeded", "Seeded", "Organic-Like/Looking", "Open Config", "Open Last Generated Image", "Quit Program", "uS", "S", "Ol", "OC", "OD", "E", False, "300x100", True, "Image Generator", "Config", ".IXXC", True, True, "IXX Image Gen Icon.ico")
         Con = open("Config.IXXC", "r").read()
         if Con == "uS":
-            UnSeeded_Gen()
+            Recent_Img = UnSeeded_Gen()
         elif Con == "S":
-            Seeded_Gen()
+            Recent_Img = Seeded_Gen()
         elif Con == "Ol":
-            OG("Img_Config.IXXC")
+            Recent_Img = OG("Img_Config.IXXC")
         elif Con == "OC":
             os.startfile("Img_Config.IXXC")
         elif Con == "OD":
-            open(os.path.join(os.getcwd(),"Generated Images"))
+            try:
+                os.startfile(os.path(Recent_Img))
+            except UnboundLocalError:
+                print("An Image has not yet been generated.")
         elif Con == "E":
             break
         else:
